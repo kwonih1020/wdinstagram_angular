@@ -34,7 +34,7 @@ angular
     wdinstagramEditController
   ])
 
-function RouterFunction( $stateProvider ){
+function RouterFunction($stateProvider){
   $stateProvider
   .state("wdiIndex", {
     url: "/instas",
@@ -63,7 +63,7 @@ function RouterFunction( $stateProvider ){
 }
 
 function InstaFactoryFunction( $resource ){
-  return $resource("http://localhost:3000/entries/:id", {}, {  update: { method: "Put" }
+  return $resource("http://localhost:3000/entries/:id", {}, {  update: { method: "PUT" }
   })
 }
 
