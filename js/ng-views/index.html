@@ -1,0 +1,7 @@
+<a data-ui-sref="wdiNew"> New Instagram </a>
+
+<div ng-repeat="insta in vm.instas">
+  <h2> {{insta.author}} </h2>
+  <a data-ui-sref="wdiShow({id: insta.id})"><img data-ng-src={{insta.photo_url}}></a>
+  <p> {{insta.body}} </p>
+</div>
