@@ -37,33 +37,33 @@ angular
 function RouterFunction($stateProvider){
   $stateProvider
   .state("wdiIndex", {
-    url: "/instas",
+    url: "/entries",
     templateUrl: "js/ng-views/index.html",
     controller: "wdiIndexCtrl",
     controllerAs: "vm"
   })
   .state("wdiNew", {
-    url: "/instas/new",
+    url: "/entries/new",
     templateUrl: "js/ng-views/new.html",
     controller: "wdiNewCtrl",
     controllerAs: "vm"
   })
   .state("wdiShow", {
-    url: "/instas/:id",
+    url: "/entries/:id",
     templateUrl: "js/ng-views/show.html",
     controller: "wdiShowCtrl",
     controllerAs: "vm"
   })
   .state("wdiEdit", {
-    url: "/instas/:id/edit",
+    url: "/entries/:id/edit",
     templateUrl: "js/ng-views/edit.html",
     controller: "wdiEditCtrl",
     controllerAs: "vm"
   })
 }
 
-function InstaFactoryFunction( $resource ){
-  return $resource("http://localhost:3000/entries/:id", {}, {  update: { method: "PUT" }
+function InstaFactoryFunction($resource){
+  return $resource("http://localhost:3000/entries/:id", {}, {update: { method: "PUT" }
   })
 }
 
@@ -97,6 +97,7 @@ function wdinstagramEditController( InstaFactory, $stateParams, $state ){
     })
   }
 }
+
 // let data = [
 //   {author: "Ick", body: "This is first instagram body.", photo_url: "http://www.thephoblographer.com/wp-content/uploads/2016/09/instagram-770x433.jpg", id: 0},
 //   {author: "Hyun", body: "This is second instagram body.", photo_url: "http://www.thephoblographer.com/wp-content/uploads/2016/09/instagram-770x433.jpg", id: 1},
